@@ -1,0 +1,4 @@
+.idea/vcs.xml
+dist/
+node_modules/
+react-template.iml
