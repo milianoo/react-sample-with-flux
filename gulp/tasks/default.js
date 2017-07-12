@@ -67,7 +67,7 @@ gulp.task('js', function() {
         var target = gulp.src(config.paths.dist + '/index.html');
 
         // It's not necessary to read the files (will speed up things), we're only after their paths:
-        var sources = gulp.src([ './dist/**/*.js', './dist/**/*.css'], {read: false});
+        var sources = gulp.src(['./dist/**/*.js', './dist/**/*.css'], {read: false});
 
         target.pipe(inject(sources, {relative: true}))
             .pipe(gulp.dest('./dist'));
@@ -127,5 +127,5 @@ gulp.task('watch', function() {
 });
 
 gulp.task('build', ['html', 'js', 'less', 'css', 'images']);
-
+gulp.task('run', ['open', 'watch']);
 gulp.task('default', ['build', 'open', 'watch']);
